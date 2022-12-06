@@ -4,6 +4,8 @@ After the three challenges for the week, the bakers' ranks for each challenge wi
 
 We are trying to determine the probability of baker 1 (who has a weight of 14) winning, the probability of baker 2 (who has a weight of 12) winning, the probability of baker 11 (who has a weight of 8) winning, and the probability of baker 12 (who has a weight of 6) winning. We also want to know which week baker 1, baker 2, baker 11, and baker 12 are expected to be eliminated in the long run (the average of all of the weeks in which they are eliminated). We'd also like to know how likely the differently weighted bakers (14, 12, 8, 6) are to make it to the final three/how likely they are to win.
 
+Weight = Range of possible random nums selected 
+Weight 14 --> 0 13
 
 1. The probability of bakers with ranks (14,12,8,6) that will win
 
