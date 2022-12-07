@@ -18,15 +18,27 @@ data = pd.DataFrame()
 
 def intialize_data(baker_list):
     temp_week_count = []
+    
+    currentWeek = 1
+    # Add Weeks 
+    
+    print(baker_list[0].weeks_eliminated)
+    
     for baker in baker_list:
         win_percentages.append(baker.win_percentage)
-        # print(baker.win_percentage)
-        # print(baker.weeks_eliminated[0])
-        # print({x: baker.weeks_eliminated for x in baker.weeks_eliminated})
-        temp_week_count.append(baker.weeks_eliminated["Week 1"])
-        # print(baker.win_percentage)
-    week_elim_count.append[temp_week_count]
-
+        
+        # print(baker.weeks_eliminated["Week 1"])
+    for i in range (12):
+        for baker in baker_list:
+            temp_week_count.append(baker.weeks_eliminated["Week " + str(currentWeek)])
+            
+        print(temp_week_count)     
+        if i < 11:
+            temp_week_count = []   
+            
+        week_elim_count.append({"Week " + str(currentWeek): temp_week_count})
+        currentWeek += 1
+    
 
 def pickVal(weight):
     return np.random.randint(0, weight)
@@ -71,21 +83,29 @@ def simulate_wins(baker_list: list):
 
 def calc_win_percentile(baker_list, num_epochs):
     for baker in baker_list:
-        print(baker.name)
-        print(baker_wins[baker.name])
-
         # Rounds to 3 decimals
         baker.win_percentage = round(
             (baker_wins[baker.name] / num_epochs) * 100, 3)
     # baker.probability = baker_wins[baker.name]
 
 
+
+        
 def display_DataFrame():
     # DYNAMICALLY MAKE ELIM COUNT
+    # print(week_elim_count)[0]
+    # print(str(list(week_elim_count[0].keys())[0]))    
+    # print(list(week_elim_count[0].values()))
+    print(str(list(week_elim_count[0].keys())[0]))
+    print(list(week_elim_count[0].values())[0])
+    print()
+
     print(
-        pd.DataFrame({"Bakers": list(baker_wins.keys()), "Wins": list(
-            baker_wins.values()), "Win-Percentages": win_percentages},
-            {"Week 1": week_elim_count[0]}),
+        pd.DataFrame({"Bakers": list(baker_wins.keys()), 
+                      "Wins": list(baker_wins.values()), "Win-Percentages": win_percentages,
+                      str(list(week_elim_count[0].keys())[0]): list(week_elim_count[0].values())[0],
+                     }
+            ),
     )
 
 
