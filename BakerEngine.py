@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from Baker import Baker
+
 # from scipy.stats import norm
 # import matplotlib.pyplot as plt
 
@@ -25,7 +26,7 @@ def intialize_data(baker_list):
         # print({x: baker.weeks_eliminated for x in baker.weeks_eliminated})
         temp_week_count.append(baker.weeks_eliminated["Week 1"])
         # print(baker.win_percentage)
-    week_elim_count.append[temp_week_count]
+    week_elim_count.append(temp_week_count)
 
 
 def pickVal(weight):
@@ -84,8 +85,20 @@ def display_DataFrame():
     # DYNAMICALLY MAKE ELIM COUNT
     print(
         pd.DataFrame({"Bakers": list(baker_wins.keys()), "Wins": list(
-            baker_wins.values()), "Win-Percentages": win_percentages},
-            {"Week 1": week_elim_count[0]}),
+            baker_wins.values()), "Win-Percentages": win_percentages,
+                      "Week 1": week_elim_count[0],
+                      #        "Week 2": week_elim_count[1],
+                      #        "Week 3": week_elim_count[2],
+                      #        "Week 4": week_elim_count[3],
+                      #        "Week 5": week_elim_count[4],
+                      #        "Week 6": week_elim_count[5],
+                      #        "Week 7": week_elim_count[6],
+                      #        "Week 8": week_elim_count[7],
+                      #        "Week 9": week_elim_count[8],
+                      #        "Week 10": week_elim_count[9],
+                      #        "Week 11": week_elim_count[10],
+                      #        "Week 12": week_elim_count[11],
+                      }),
     )
 
 
