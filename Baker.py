@@ -1,3 +1,4 @@
+"""Class simulates each baker in the BakerEngine simulation"""
 class Baker:
     def __init__(self, weight, name):
         self.name = name
